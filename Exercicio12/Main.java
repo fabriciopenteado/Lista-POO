@@ -33,8 +33,6 @@ public class Main {
 
         leitor.close();
 
-        // produto.mastrarDados();
-
         System.out.println("O produto mais caro eh:" + prodCaro);
         System.out.printf("No valor R$ %.2f  ", maior);
 

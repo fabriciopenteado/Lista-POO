@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         Aluno[] alunos = new Aluno[5];
+        String busca = "";
+        boolean encocntrado = false;
 
         for (int i = 0; i < alunos.length; i++) {
             alunos[i] = new Aluno();
@@ -18,13 +20,19 @@ public class Main {
             alunos[i].calcularMedia();
         }
 
+        System.out.println("\nDigite o nome do aluno que deseja localizar:");
+        busca = leitor.nextLine();
         leitor.close();
 
         for (int i = 0; i < alunos.length; i++) {
-            alunos[i].mostrarDados();
-            System.out.println("");
+            if(alunos[i].nome.equals(busca)){
+                alunos[i].mostrarDados();
+                encocntrado = true;
+            }
         }
-
+        if(!encocntrado){
+            System.out.println("Aluno nao encontrado");
+        }    
     }
 
 }
